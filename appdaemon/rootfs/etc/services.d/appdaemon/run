@@ -1,0 +1,31 @@
+#!/usr/bin/with-contenv bash
+# ==============================================================================
+# Community Hass.io Add-ons: AppDaemon
+# Runs the AppDaemon
+# ==============================================================================
+# shellcheck disable=SC1091
+source /usr/lib/hassio-addons/base.sh
+
+declare log_level
+
+# Find the matching Tor log level
+case "$(hass.string.lower "$(hass.config.get 'log_level')")" in
+    all|trace|debug)
+        log_level="DEBUG"
+        ;;
+    info|notice)
+        log_level="INFO"
+        ;;
+    warning)
+        log_level="WARNING"
+        ;;
+    error)
+        log_level="ERROR"
+        ;;
+    fatal|off)
+        log_level="FATAL"
+        ;;
+esac
+
+# Run the AppDaemon
+exec appdaemon -c /config/appdaemon -D "${log_level}"
