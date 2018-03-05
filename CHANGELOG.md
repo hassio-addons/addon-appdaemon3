@@ -9,6 +9,21 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 No unreleased changes yet.
 
+## [v0.2.0] (2018-03-05)
+
+[Full Changelog][v0.1.0-v0.2.0]
+
+### Added
+
+- Warns the user when not using the Hass.io Proxy address
+- Adds support for auto configuring Hass.io API security key
+
+### Changed
+
+- Updates base image to v1.3.3
+- Optimizes images in this repository
+- Upgrades AppDaemon version to 3.0b4 (#7) (@acockburn)
+
 ## [v0.1.0] (2018-01-30)
 
 ### Added
@@ -17,4 +32,6 @@ No unreleased changes yet.
 
 [keep-a-changelog]: http://keepachangelog.com/en/1.0.0/
 [semantic-versioning]: http://semver.org/spec/v2.0.0.html
+[v0.1.0-v0.2.0]: https://github.com/hassio-addons/addon-appdaemon3/compare/v0.1.0...v0.2.0
 [v0.1.0]: https://github.com/hassio-addons/addon-appdaemon3/tree/v0.1.0
+[v0.2.0]: https://github.com/hassio-addons/addon-appdaemon3/tree/v0.2.0
