@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 No unreleased changes yet.
 
+## [v1.0.0] (2018-03-18)
+
+[Full Changelog][v0.3.0-v1.0.0]
+
+### Changed
+
+- Updates AppDaemon to version 3.0.0 (#9) (@acockburn)
+
 ## [v0.3.0] (2018-03-05)
 
 [Full Changelog][v0.2.0-v0.3.0]
@@ -44,4 +52,6 @@ No unreleased changes yet.
 [v0.1.0]: https://github.com/hassio-addons/addon-appdaemon3/tree/v0.1.0
 [v0.2.0-v0.3.0]: https://github.com/hassio-addons/addon-appdaemon3/compare/v0.2.0...v0.3.0
 [v0.2.0]: https://github.com/hassio-addons/addon-appdaemon3/tree/v0.2.0
+[v0.3.0-v1.0.0]: https://github.com/hassio-addons/addon-appdaemon3/compare/v0.3.0...v1.0.0
 [v0.3.0]: https://github.com/hassio-addons/addon-appdaemon3/tree/v0.3.0
+[v1.0.0]: https://github.com/hassio-addons/addon-appdaemon3/tree/v1.0.0
