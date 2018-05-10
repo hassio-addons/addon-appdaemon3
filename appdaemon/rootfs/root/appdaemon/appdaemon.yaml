@@ -1,3 +1,4 @@
+---
 secrets: /config/secrets.yaml
 log:
   logfile: STDOUT
