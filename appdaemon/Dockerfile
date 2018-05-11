@@ -1,20 +1,21 @@
 ARG BUILD_FROM=hassioaddons/base-amd64:1.3.3
+# hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
 # Setup base
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-        gcc \
-        libc-dev \
-        libffi-dev \
-        python3-dev \
+        gcc=6.4.0-r5 \
+        libc-dev=0.7.1-r0 \
+        libffi-dev=3.2.1-r4 \
+        python3-dev=3.6.3-r9 \
     \
     && apk add --no-cache \
-        python3 \
+        python3=3.6.3-r9 \
     \
     && pip3 install \
         appdaemon==3.0.1 \
-        yq \
+        yq==2.6.0 \
     \
     && apk del --purge .build-dependencies
 
