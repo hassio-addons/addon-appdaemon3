@@ -1,5 +1,5 @@
 {
-  "name": "AppDaemon3",
+  "name": "AppDaemon",
   "version": "dev",
   "slug": "appdaemon3",
   "description": "Python Apps and HADashboard using AppDaemon 3.x for Home Assistant",
