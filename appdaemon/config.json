@@ -36,7 +36,6 @@
     "python_packages": ["str"]
   },
   "environment": {
-    "LOG_FORMAT": "{LEVEL}: {MESSAGE}",
-    "SUPERVISOR_VERSION": ">=0.85.0"
+    "LOG_FORMAT": "{LEVEL}: {MESSAGE}"
   }
 }
