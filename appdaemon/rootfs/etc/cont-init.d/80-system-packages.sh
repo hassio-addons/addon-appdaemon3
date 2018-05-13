@@ -6,8 +6,15 @@
 # shellcheck disable=SC1091
 source /usr/lib/hassio-addons/base.sh
 
+if hass.config.has_value 'system_repo'; then
+    for repo in $(hass.config.get 'system_repo'); do
+		echo "${repo}" >> /etc/apk/repositories || hass.die "Failed add repo ${repo}"
+    done
+fi
+
+
 if hass.config.has_value 'system_packages'; then
-    apk update \
+	apk update \
         || hass.die 'Failed updating Alpine packages repository indexes'
 
     for package in $(hass.config.get 'system_packages'); do
