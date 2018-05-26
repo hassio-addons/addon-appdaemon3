@@ -10,7 +10,8 @@ readonly CONFIG_FILE="/config/appdaemon/appdaemon.yaml"
 declare TMP_FILE
 
 if [[ "$(yq -r '.appdaemon.plugins.HASS.ha_url' ${CONFIG_FILE})" = "http://hassio/homeassistant"
-    && "$(yq -r '.appdaemon.plugins.HASS.ha_key' ${CONFIG_FILE})" != "${HASSIO_TOKEN}" ]];
+    && "$(yq -r '.appdaemon.plugins.HASS.ha_key' ${CONFIG_FILE})" != "${HASSIO_TOKEN}"
+    && "$(yq -r '.appdaemon.plugins.HASS.ha_key' ${CONFIG_FILE})" != "!secret "* ]];
 then
     TMP_FILE=$(mktemp)
 
