@@ -5,7 +5,7 @@ FROM ${BUILD_FROM}
 # Setup base
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-        gcc=6.4.0-r5 \
+        gcc=6.4.0-r8 \
         libc-dev=0.7.1-r0 \
         libffi-dev=3.2.1-r4 \
         python3-dev=3.6.3-r9 \
