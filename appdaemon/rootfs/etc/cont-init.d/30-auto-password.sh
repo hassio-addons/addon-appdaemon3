@@ -15,6 +15,6 @@ then
     hass.log.info 'ha_key is missing in the AppDaemon configuration, fixing...'
 
     yq write --inplace "${CONFIG_FILE}" \
-        'appdaemon.plugins.HASS.ha_url' "${HASSIO_TOKEN}" \
+        'appdaemon.plugins.HASS.ha_key' "${HASSIO_TOKEN}" \
         || hass.die 'Failed to set Hass.io API token into the AppDaemon config'
 fi
