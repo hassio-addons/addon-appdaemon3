@@ -7,7 +7,7 @@
 source /usr/lib/hassio-addons/base.sh
 
 readonly CONFIG_FILE="/config/appdaemon/appdaemon.yaml"
-readonly HA_URL=$(yq -r '.appdaemon.plugins.HASS.ha_url' ${CONFIG_FILE})
+readonly HA_URL=$(yq read "${CONFIG_FILE}" 'appdaemon.plugins.HASS.ha_url')
 
 if [[ "${HA_URL}" != "http://hassio/homeassistant" ]]; then
     hass.log.warning 'You are using an non-recommended Home Assistant URL!'
