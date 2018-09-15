@@ -11,10 +11,10 @@ RUN \
         gcc=6.4.0-r8 \
         libc-dev=0.7.1-r0 \
         libffi-dev=3.2.1-r4 \
-        python3-dev=3.6.4-r1 \
+        python3-dev=3.6.6-r0 \
     \
     && apk add --no-cache \
-        python3=3.6.4-r1 \
+        python3=3.6.6-r0 \
     \
     && pip3 install \
         appdaemon==3.0.1 \
