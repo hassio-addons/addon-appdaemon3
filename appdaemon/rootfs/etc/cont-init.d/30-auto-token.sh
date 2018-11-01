@@ -8,13 +8,17 @@ source /usr/lib/hassio-addons/base.sh
 
 readonly CONFIG_FILE="/config/appdaemon/appdaemon.yaml"
 
+# Ensure older key is deleted
+yq delete --inplace "${CONFIG_FILE}" 'appdaemon.plugins.HASS.ha_key'
+
+# Add token
 if [[ "$(yq read ${CONFIG_FILE} 'appdaemon.plugins.HASS.ha_url')" = "http://hassio/homeassistant"
-    && "$(yq read ${CONFIG_FILE} 'appdaemon.plugins.HASS.ha_key')" != "${HASSIO_TOKEN}"
-    && "$(yq read ${CONFIG_FILE} 'appdaemon.plugins.HASS.ha_key')" != '!secret '* ]];
+    && "$(yq read ${CONFIG_FILE} 'appdaemon.plugins.HASS.token')" != "${HASSIO_TOKEN}"
+    && "$(yq read ${CONFIG_FILE} 'appdaemon.plugins.HASS.token')" != '!secret '* ]];
 then
-    hass.log.info 'ha_key is missing in the AppDaemon configuration, fixing...'
+    hass.log.info 'Token is missing in the AppDaemon configuration, fixing...'
 
     yq write --inplace "${CONFIG_FILE}" \
-        'appdaemon.plugins.HASS.ha_key' "${HASSIO_TOKEN}" \
+        'appdaemon.plugins.HASS.token' "${HASSIO_TOKEN}" \
         || hass.die 'Failed to set Hass.io API token into the AppDaemon config'
 fi
