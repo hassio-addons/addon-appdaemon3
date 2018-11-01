@@ -16,7 +16,8 @@ if [[ "$(yq read ${CONFIG_FILE} 'appdaemon.plugins.HASS.ha_url')" = "http://hass
     && "$(yq read ${CONFIG_FILE} 'appdaemon.plugins.HASS.token')" != "${HASSIO_TOKEN}"
     && "$(yq read ${CONFIG_FILE} 'appdaemon.plugins.HASS.token')" != '!secret '* ]];
 then
-    hass.log.info 'Token is missing in the AppDaemon configuration, fixing...'
+    hass.log.info \
+        'Updating Hass.io API token in AppDaemon with the current one...'
 
     yq write --inplace "${CONFIG_FILE}" \
         'appdaemon.plugins.HASS.token' "${HASSIO_TOKEN}" \
