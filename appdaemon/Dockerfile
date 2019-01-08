@@ -5,6 +5,9 @@ FROM ${BUILD_FROM}
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
+# Copy Python requirements file
+COPY requirements.txt /tmp/
+
 # Setup base
 RUN \
     apk add --no-cache --virtual .build-dependencies \
@@ -16,8 +19,7 @@ RUN \
     && apk add --no-cache \
         python3=3.6.6-r0 \
     \
-    && pip3 install \
-        appdaemon==3.0.2 \
+    && pip3 install --no-cache-dir -r /tmp/requirements.txt \
     \
     && apk del --purge .build-dependencies
 
