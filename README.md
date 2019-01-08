@@ -45,25 +45,21 @@ comparison to installing any other Hass.io add-on.
 [![Docker Version][armhf-version-shield]][armhf-microbadger]
 [![Docker Layers][armhf-layers-shield]][armhf-microbadger]
 [![Docker Pulls][armhf-pulls-shield]][armhf-dockerhub]
-[![Anchore Image Overview][armhf-anchore-shield]][armhf-anchore]
 
 [![Docker Architecture][aarch64-arch-shield]][aarch64-dockerhub]
 [![Docker Version][aarch64-version-shield]][aarch64-microbadger]
 [![Docker Layers][aarch64-layers-shield]][aarch64-microbadger]
 [![Docker Pulls][aarch64-pulls-shield]][aarch64-dockerhub]
-[![Anchore Image Overview][aarch64-anchore-shield]][aarch64-anchore]
 
 [![Docker Architecture][amd64-arch-shield]][amd64-dockerhub]
 [![Docker Version][amd64-version-shield]][amd64-microbadger]
 [![Docker Layers][amd64-layers-shield]][amd64-microbadger]
 [![Docker Pulls][amd64-pulls-shield]][amd64-dockerhub]
-[![Anchore Image Overview][amd64-anchore-shield]][amd64-anchore]
 
 [![Docker Architecture][i386-arch-shield]][i386-dockerhub]
 [![Docker Version][i386-version-shield]][i386-microbadger]
 [![Docker Layers][i386-layers-shield]][i386-microbadger]
 [![Docker Pulls][i386-pulls-shield]][i386-dockerhub]
-[![Anchore Image Overview][i386-anchore-shield]][i386-anchore]
 
 ## Configuration
 
@@ -212,8 +208,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[aarch64-anchore-shield]: https://anchore.io/service/badges/image/455bd9cba7f1e89ef182ce142230053b77e40fc7e01d3ef127636d7410ee5dcb
-[aarch64-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fappdaemon3-aarch64%3Alatest
 [aarch64-arch-shield]: https://img.shields.io/badge/architecture-aarch64-blue.svg
 [aarch64-dockerhub]: https://hub.docker.com/r/hassioaddons/appdaemon3-aarch64
 [aarch64-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/appdaemon3-aarch64.svg
@@ -221,16 +215,12 @@ SOFTWARE.
 [aarch64-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/appdaemon3-aarch64.svg
 [aarch64-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/appdaemon3-aarch64.svg
 [alpine-packages]: https://pkgs.alpinelinux.org/packages
-[amd64-anchore-shield]: https://anchore.io/service/badges/image/32da6e9da8fc42adcbb6da2ade62b24f84ce08c9490069aea9026267df23ab26
-[amd64-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fappdaemon3-amd64%3Alatest
 [amd64-arch-shield]: https://img.shields.io/badge/architecture-amd64-blue.svg
 [amd64-dockerhub]: https://hub.docker.com/r/hassioaddons/appdaemon3-amd64
 [amd64-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/appdaemon3-amd64.svg
 [amd64-microbadger]: https://microbadger.com/images/hassioaddons/appdaemon3-amd64
 [amd64-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/appdaemon3-amd64.svg
 [amd64-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/appdaemon3-amd64.svg
-[armhf-anchore-shield]: https://anchore.io/service/badges/image/a7b22fe5d4d5108d9455bd6b531dac365fe54f89962626611b56297240951527
-[armhf-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fappdaemon3-armhf%3Alatest
 [armhf-arch-shield]: https://img.shields.io/badge/architecture-armhf-blue.svg
 [armhf-dockerhub]: https://hub.docker.com/r/hassioaddons/appdaemon3-armhf
 [armhf-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/appdaemon3-armhf.svg
@@ -251,8 +241,6 @@ SOFTWARE.
 [gitlabci-shield]: https://gitlab.com/hassio-addons/addon-appdaemon3/badges/master/pipeline.svg
 [gitlabci]: https://gitlab.com/hassio-addons/addon-appdaemon3/pipelines
 [home-assistant]: https://home-assistant.io
-[i386-anchore-shield]: https://anchore.io/service/badges/image/0da227504ac93f94e8787876d430fec49a6f4aadfd8347f6ac7b9f2b58bc61f9
-[i386-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fappdaemon3-i386%3Alatest
 [i386-arch-shield]: https://img.shields.io/badge/architecture-i386-blue.svg
 [i386-dockerhub]: https://hub.docker.com/r/hassioaddons/appdaemon3-i386
 [i386-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/appdaemon3-i386.svg
