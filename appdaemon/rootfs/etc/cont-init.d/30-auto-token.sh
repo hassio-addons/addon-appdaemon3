@@ -8,6 +8,12 @@ source /usr/lib/hassio-addons/base.sh
 
 readonly CONFIG_FILE="/config/appdaemon/appdaemon.yaml"
 
+# Do not run when auto token has been disabled
+if hass.config.true 'disable_auto_token'; then
+    hass.log.info 'Automatic update of Home Assistant token is disabled.'
+    exit "${EX_OK}"
+fi
+
 # Ensure older key is deleted
 yq delete --inplace "${CONFIG_FILE}" 'appdaemon.plugins.HASS.ha_key'
 

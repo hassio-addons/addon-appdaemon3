@@ -70,6 +70,7 @@ Example add-on configuration:
 ```json
 {
   "log_level": "info",
+  "disable_auto_token": false,
   "system_packages": [
     "ffmpeg"
   ],
@@ -101,6 +102,16 @@ the `log_level` is set to `info`, which is the recommended setting unless
 you are troubleshooting.
 
 These log level also affects the log levels of the AppDaemon.
+
+### Option: `disable_auto_token`
+
+By default, this add-on will update tokens used inside the `appdaemon.yaml`
+configuration file, each time the add-on start. There are cases where this
+is not wished for, for example, when storing the configuration publicly in Git
+and are using a `!secret` value for the token.
+
+Setting this option to `true`, will cause the add-on to stop updating files
+automatically.
 
 ### Option: `system_packages`
 
