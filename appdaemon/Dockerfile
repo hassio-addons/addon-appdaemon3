@@ -13,8 +13,8 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
         gcc=8.2.0-r2 \
         libc-dev=0.7.1-r0 \
-        libffi-dev=3.2.1-r4 \
         python3-dev=3.6.6-r0 \
+        libffi-dev=3.2.1-r6 \
     \
     && apk add --no-cache \
         python3=3.6.6-r0 \
