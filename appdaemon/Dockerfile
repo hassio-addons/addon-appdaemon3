@@ -11,7 +11,7 @@ COPY requirements.txt /tmp/
 # Setup base
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-        gcc=6.4.0-r9 \
+        gcc=8.2.0-r2 \
         libc-dev=0.7.1-r0 \
         libffi-dev=3.2.1-r4 \
         python3-dev=3.6.6-r0 \
