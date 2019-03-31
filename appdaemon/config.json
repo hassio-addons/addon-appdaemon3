@@ -28,13 +28,12 @@
     "ssl"
   ],
   "options": {
-    "log_level": "info",
     "disable_auto_token": false,
     "system_packages": [],
     "python_packages": []
   },
   "schema": {
-    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)",
+    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)?",
     "disable_auto_token": "bool",
     "system_packages": ["str"],
     "python_packages": ["str"]
