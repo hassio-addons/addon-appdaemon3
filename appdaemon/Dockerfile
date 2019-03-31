@@ -19,7 +19,7 @@ RUN \
     && apk add --no-cache \
         python3=3.6.8-r1 \
     \
-    && pip3 install --upgrade pip==18.1 \
+    && pip3 install --upgrade pip==19.0.3 \
     && pip3 install --no-cache-dir -r /tmp/requirements.txt \
     \
     && apk del --purge .build-dependencies
