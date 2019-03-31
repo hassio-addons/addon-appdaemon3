@@ -1,16 +1,13 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: AppDaemon
 # Ensure the correct API key is in the AppDaemon is used
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
 readonly CONFIG_FILE="/config/appdaemon/appdaemon.yaml"
 
 # Do not run when auto token has been disabled
-if hass.config.true 'disable_auto_token'; then
-    hass.log.info 'Automatic update of Home Assistant token is disabled.'
+if bashio::config.true 'disable_auto_token'; then
+    bashio::log.info 'Automatic update of Home Assistant token is disabled.'
     exit "${EX_OK}"
 fi
 
@@ -22,10 +19,10 @@ if [[ "$(yq read ${CONFIG_FILE} 'appdaemon.plugins.HASS.ha_url')" = "http://hass
     && "$(yq read ${CONFIG_FILE} 'appdaemon.plugins.HASS.token')" != "${HASSIO_TOKEN}"
     && "$(yq read ${CONFIG_FILE} 'appdaemon.plugins.HASS.token')" != '!secret '* ]];
 then
-    hass.log.info \
+    bashio::log.info \
         'Updating Hass.io API token in AppDaemon with the current one...'
 
     yq write --inplace "${CONFIG_FILE}" \
         'appdaemon.plugins.HASS.token' "${HASSIO_TOKEN}" \
-        || hass.die 'Failed to set Hass.io API token into the AppDaemon config'
+        || bashio::exit.nok 'Failed to set Hass.io API token into the AppDaemon config'
 fi

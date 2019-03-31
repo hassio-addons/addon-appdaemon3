@@ -1,12 +1,9 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: AppDaemon
 # Creates initial AppDaemon configuration in case it is non-existing
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
-if ! hass.directory_exists '/config/appdaemon'; then
+if ! bashio::fs.directory_exists '/config/appdaemon'; then
     cp -R /root/appdaemon /config/appdaemon \
-        || hass.die 'Failed to create initial AppDaemon configuration'
+        || bashio::exit.nok 'Failed to create initial AppDaemon configuration'
 fi

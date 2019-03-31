@@ -1,10 +1,7 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: AppDaemon
 # Removes symlink to the compiled directory on shutdown
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
 rm -f /config/appdaemon/compiled \
-    ||  hass.die 'Failed to remove symlink tp compiled directory'
+    ||  bashio::exit.nok 'Failed to remove symlink tp compiled directory'
