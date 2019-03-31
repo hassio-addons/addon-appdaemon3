@@ -27,5 +27,5 @@ if ! bashio::fs.directory_exists '/data/compiled'; then
         /data/compiled/javascript \
         || bashio::exit.nok 'Failed to created compiled directory'
 
-    echo -e "$(hass.addon.version)" > /data/version
+    echo -e "$(bashio::addon.version)" > /data/version
 fi
