@@ -38,8 +38,5 @@
     "disable_auto_token": "bool",
     "system_packages": ["str"],
     "python_packages": ["str"]
-  },
-  "environment": {
-    "LOG_FORMAT": "{LEVEL}: {MESSAGE}"
   }
 }
