@@ -8,7 +8,7 @@ readonly CONFIG_FILE="/config/appdaemon/appdaemon.yaml"
 # Do not run when auto token has been disabled
 if bashio::config.true 'disable_auto_token'; then
     bashio::log.info 'Automatic update of Home Assistant token is disabled.'
-    exit "${EX_OK}"
+    exit 0
 fi
 
 # Ensure older key is deleted
