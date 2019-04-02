@@ -1,1 +1,1 @@
-appdaemon==3.0.2
+appdaemon==3.0.3
