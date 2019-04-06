@@ -14,12 +14,7 @@ RUN \
         gcc=8.2.0-r2 \
         libc-dev=0.7.1-r0 \
         libffi-dev=3.2.1-r6 \
-        python3-dev=3.6.8-r1 \
     \
-    && apk add --no-cache \
-        python3=3.6.8-r1 \
-    \
-    && pip3 install --upgrade pip==19.0.3 \
     && pip3 install --no-cache-dir -r /tmp/requirements.txt \
     \
     && apk del --purge .build-dependencies
