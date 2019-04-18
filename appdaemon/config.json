@@ -21,6 +21,10 @@
     "5000/tcp": 5000,
     "5050/tcp": 5050
   },
+  "ports_description": {
+    "5000/tcp": "AppDaemon RESTFul API",
+    "5050/tcp": "HA Dashboard web interface"
+  },
   "map": [
     "config:rw",
     "share:rw",
