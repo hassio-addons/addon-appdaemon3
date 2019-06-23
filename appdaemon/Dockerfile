@@ -9,6 +9,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 COPY requirements.txt /tmp/
 
 # Setup base
+ARG BUILD_ARCH=amd64
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         gcc=8.3.0-r0 \
@@ -21,6 +22,7 @@ RUN \
     \
     && pip3 install \
         --no-cache-dir \
+        --prefer-binary \
         --find-links "https://wheels.hass.io/alpine-3.10/${BUILD_ARCH}/" \
         -r /tmp/requirements.txt \
     \
@@ -35,7 +37,6 @@ RUN \
 COPY rootfs /
 
 # Build arguments
-ARG BUILD_ARCH
 ARG BUILD_DATE
 ARG BUILD_REF
 ARG BUILD_VERSION
