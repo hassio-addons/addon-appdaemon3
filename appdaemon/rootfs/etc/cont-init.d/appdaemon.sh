@@ -4,6 +4,7 @@
 # Configures AppDaemon
 # ==============================================================================
 readonly CONFIG_FILE="/config/appdaemon/appdaemon.yaml"
+declare arch
 declare ha_url
 
 # Creates initial AppDaemon configuration in case it is non-existing
@@ -89,10 +90,11 @@ fi
 
 # Install user configured/requested Python packages
 if bashio::config.has_value 'python_packages'; then
+    arch=$(bashio::info.arch)
     for package in $(bashio::config 'python_packages'); do
         pip3 install \
             --prefer-binary \
-            --find-links "https://wheels.hass.io/alpine-3.10/${BUILD_ARCH}/" \
+            --find-links "https://wheels.hass.io/alpine-3.10/${arch}/" \
             "$package" \
                 || bashio::exit.nok "Failed installing package ${package}"
     done
