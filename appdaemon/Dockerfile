@@ -2,6 +2,10 @@ ARG BUILD_FROM=hassioaddons/base:4.1.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
+# Copy yq
+ARG BUILD_ARCH=amd64
+COPY bin/yq_${BUILD_ARCH} /usr/bin/yq
+
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
@@ -9,7 +13,6 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 COPY requirements.txt /tmp/
 
 # Setup base
-ARG BUILD_ARCH=amd64
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         gcc=8.3.0-r0 \
