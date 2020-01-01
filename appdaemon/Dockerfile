@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base:5.0.2
+ARG BUILD_FROM=hassioaddons/base:6.0.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -26,7 +26,7 @@ RUN \
     && pip3 install \
         --no-cache-dir \
         --prefer-binary \
-        --find-links "https://wheels.hass.io/alpine-3.10/${BUILD_ARCH}/" \
+        --find-links "https://wheels.hass.io/alpine-3.11/${BUILD_ARCH}/" \
         -r /tmp/requirements.txt \
     \
     && find /usr/local \
