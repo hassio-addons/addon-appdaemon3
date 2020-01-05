@@ -110,6 +110,12 @@ installed to your AppDaemon setup (e.g., `PyMySQL`. `Requests`, `Pillow`).
 **Note**: _Adding many packages will result in a longer start-up time
 for the add-on._
 
+#### Option: `init_commands`
+
+Customize your environment even more with the `init_commands` option.
+Add one or more shell commands to the list, and they will be executed every
+single time this add-on starts.
+
 ## AppDaemon and HADashboard configuration
 
 This add-on does not configure the AppDaemon or HADashboard for you.
