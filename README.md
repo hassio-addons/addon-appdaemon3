@@ -1,4 +1,4 @@
-# Community Hass.io Add-ons: AppDaemon
+# Community Hass.io Add-ons: AppDaemon 3
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -24,6 +24,20 @@
 ![HADashboard screenshot](images/screenshot.png)
 
 Python Apps and HADashboard for Home Assistant
+
+## Deprecation warning
+
+**This add-on is in a deprecated state!**
+
+This add-on is powered by AppDaemon 3.x, which has been replaced by
+AppDaemon 4.x.
+
+Are you looking for installing AppDaemon or upgrading to the new AppDaemon 4.x
+add-on?
+
+<https://github.com/hassio-addons/addon-appdaemon>
+
+Or search for "AppDaemon" in the Hass.io add-on store.
 
 ## About
 
@@ -232,7 +246,7 @@ SOFTWARE.
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/
-[project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
+[project-stage-shield]: https://img.shields.io/badge/project%20stage-%20!%20DEPRECATED%20%20%20!-ff0000.svg
 [python-packages]: https://pypi.org/
 [reddit]: https://reddit.com/r/homeassistant
 [releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-appdaemon3.svg
