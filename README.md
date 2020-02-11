@@ -62,18 +62,15 @@ comparison to installing any other Home Assistant add-on.
 
 Example add-on configuration:
 
-```json
-{
-  "log_level": "info",
-  "disable_auto_token": false,
-  "system_packages": [
-    "ffmpeg"
-  ],
-  "python_packages": [
-    "PyMySQL",
-    "Pillow"
-  ]
-}
+```yaml
+log_level: info
+disable_auto_token: false
+system_packages:
+  - ffmpeg
+python_packages:
+  - PyMySQL
+  - Pillow
+
 ```
 
 **Note**: _This is just an example, don't copy and past it! Create your own!_
