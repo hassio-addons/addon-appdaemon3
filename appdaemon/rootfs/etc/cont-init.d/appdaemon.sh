@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Home Assistant Add-on: AppDaemon
+# Home Assistant Community Add-on: AppDaemon
 # Configures AppDaemon
 # ==============================================================================
 readonly CONFIG_FILE="/config/appdaemon/appdaemon.yaml"
@@ -47,25 +47,25 @@ if bashio::config.false 'disable_auto_token'; then
     yq delete --inplace "${CONFIG_FILE}" 'appdaemon.plugins.HASS.ha_key'
 
     # Add token
-    if [[ "$(yq read ${CONFIG_FILE} 'appdaemon.plugins.HASS.ha_url')" = "http://hassio/homeassistant"
-        && "$(yq read ${CONFIG_FILE} 'appdaemon.plugins.HASS.token')" != "${HASSIO_TOKEN}"
+    if [[ "$(yq read ${CONFIG_FILE} 'appdaemon.plugins.HASS.ha_url')" = "http://supervisor/core"
+        && "$(yq read ${CONFIG_FILE} 'appdaemon.plugins.HASS.token')" != "${SUPERVISOR_TOKEN}"
         && "$(yq read ${CONFIG_FILE} 'appdaemon.plugins.HASS.token')" != '!secret '* ]];
     then
         bashio::log.info \
             'Updating Hass.io API token in AppDaemon with the current one...'
 
         yq write --inplace "${CONFIG_FILE}" \
-            'appdaemon.plugins.HASS.token' "${HASSIO_TOKEN}" \
+            'appdaemon.plugins.HASS.token' "${SUPERVISOR_TOKEN}" \
             || bashio::exit.nok 'Failed to set Hass.io API token into the AppDaemon config'
     fi
 fi
 
 # Checks the currently used HA URL and warns if the Hass.io proxy isn't used
 ha_url=$(yq read "${CONFIG_FILE}" 'appdaemon.plugins.HASS.ha_url')
-if [[ "${ha_url}" != "http://hassio/homeassistant" ]]; then
+if [[ "${ha_url}" != "http://supervisor/core" ]]; then
     bashio::log.warning 'You are using an non-recommended Home Assistant URL!'
     bashio::log.warning 'Setting the "ha_url" option in your AppDaemon config to'
-    bashio::log.warning '"http://hassio/homeassistant" is recommended!'
+    bashio::log.warning '"http://supervisor/core" is recommended!'
 fi
 
 # Symlinks the compiled directory into the users AppDaemon directory
